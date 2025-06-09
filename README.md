@@ -4,6 +4,7 @@ Algorithms
 Problemas a revisar
 Decidir se um grafo é bipartido
 Dijkstra, Prim, Kruskall
+Problema da mochila
 
 
 Problemas NP
