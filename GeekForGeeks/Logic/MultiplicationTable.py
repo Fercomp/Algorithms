@@ -13,7 +13,6 @@ def multiplication_table2(n, i=1):
     return multiplication_table2(n, i+1)
 
 
-
 multiplication_table(1)
 multiplication_table(2)
 multiplication_table(10)
