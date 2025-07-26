@@ -20,5 +20,4 @@ def bfs(adj):
 
         t.append(u)
     return t
-
 print(bfs([[2],[2],[0,1,3],[2]]))
