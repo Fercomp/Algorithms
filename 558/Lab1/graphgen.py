@@ -32,4 +32,4 @@ def generate_balanced_connected_graph(n, m, w):
                 edges.add((u, v))
                 count += 1 
     
-generate_balanced_connected_graph(1000, 5000, 500)
+generate_balanced_connected_graph(10000, 100000, 100)

@@ -12,7 +12,6 @@ def create_graph():
     return graph
 
 def dijkstra(s=0):
-    graph = create_graph()
     dist = [math.inf] * len(graph)
     dist[s] = 0
     heap = [(0, s)]
@@ -29,8 +28,17 @@ def dijkstra(s=0):
 
     return dist
 
-inicio = time.time()
-for _ in range(100):
-    dijkstra()
-fim = time.time()
-print("Tempo de execução:", fim - inicio, "segundos")
+graph = create_graph()
+print(dijkstra())
+
+# import statistics, time
+# tempos = []
+# for _ in range(10):
+#     start = time.perf_counter()
+#     dijkstra()
+#     end = time.perf_counter()
+#     tempos.append(end - start)
+    
+# print("Média:", statistics.mean(tempos))
+# print("Mediana:", statistics.median(tempos))
+# print("Mínimo:", min(tempos))
