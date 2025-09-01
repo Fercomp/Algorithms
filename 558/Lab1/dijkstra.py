@@ -1,10 +1,12 @@
-import math
-import heapq
-import time
+import math, heapq, statistics, time, os
 
-def create_graph():
+def create_graph(x):
     graph = {}
-    with open("graph.txt") as f:
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    INPUT_DIR = os.path.join(BASE_DIR, "input")
+    os.makedirs(INPUT_DIR, exist_ok=True)
+    file = os.path.join(INPUT_DIR, f"graph{x}.txt")
+    with open(file) as f:
         n, m, c = map(int, f.readline().split())
         for _ in range(m):
             u, v, w = map(int, f.readline().split())
@@ -28,17 +30,13 @@ def dijkstra(s=0):
 
     return dist
 
-graph = create_graph()
-print(dijkstra())
-
-# import statistics, time
-# tempos = []
-# for _ in range(10):
-#     start = time.perf_counter()
-#     dijkstra()
-#     end = time.perf_counter()
-#     tempos.append(end - start)
+tempos = []
+for x in range(1, 16):
+    graph = create_graph(x)
+    start = time.perf_counter()
+    dijkstra()
+    end = time.perf_counter()
+    print(end - start)
+    tempos.append(end - start)
     
-# print("Média:", statistics.mean(tempos))
-# print("Mediana:", statistics.median(tempos))
-# print("Mínimo:", min(tempos))
+print("Média:", statistics.mean(tempos))
