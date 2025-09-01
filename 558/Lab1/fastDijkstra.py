@@ -1,26 +1,13 @@
-import sys, statistics, time, os
+import sys, statistics, time, utils
 from collections import defaultdict
 
-def create_graph(x):
-    graph = {}
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    INPUT_DIR = os.path.join(BASE_DIR, "input")
-    os.makedirs(INPUT_DIR, exist_ok=True)
-    file = os.path.join(INPUT_DIR, f"graph{x}.txt")
-    with open(file) as f:
-        n, m, c = map(int, f.readline().split())
-        for _ in range(m):
-            u, v, w = map(int, f.readline().split())
-            graph.setdefault(u, []).append((w, v))
-    return n, m, c, graph
-
-def fastDijkstra(s=0):
-    dist = [sys.maxsize] * len(graph)
-    dist[s] = 0
+def fastDijkstra(n, source, destination, graph):
+    dist = [sys.maxsize] * n
+    dist[source] = 0
 
     maxDist = (n - 1) * c
     buckets = defaultdict(set)
-    buckets[0].add(s)
+    buckets[0].add(source)
     
     bucket_pointer = 0
     while buckets:
@@ -47,15 +34,16 @@ def fastDijkstra(s=0):
                 dist[v] = newDist
                 buckets[newDist].add(v)
 
-    return dist
+    return dist[destination]
 
 tempos = []
 for x in range(1, 16):
-    n, m, c, graph = create_graph(x)
+    n, m, c, s, d, graph = utils.create_graph(x)
     start = time.perf_counter()
-    fastDijkstra()
+    fastDijkstra(n, s, d, graph)
     end = time.perf_counter()
-    print(end - start)
-    tempos.append(end - start)
+    interval = end - start
+    print(f"Fast Dijkstra n={n}, m={m}, c={c}, s={s}, d={d}, time={interval}")
+    tempos.append(interval)
 
 print("Média:", statistics.mean(tempos))

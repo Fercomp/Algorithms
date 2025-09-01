@@ -1,5 +1,4 @@
-import random
-import os
+import random, utils
 
 def generate_balanced_connected_graph(n, m, w, x):
     integer, rest = divmod(m, w)
@@ -12,12 +11,14 @@ def generate_balanced_connected_graph(n, m, w, x):
     
     edges = set()
     count = 0
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    INPUT_DIR = os.path.join(BASE_DIR, "input")
-    os.makedirs(INPUT_DIR, exist_ok=True)
-    file = os.path.join(INPUT_DIR, f"graph{x}.txt")
+    file = utils.get_input_file(x)
+    
     with open(file, "w") as f:
-        f.write(f"{n} {m} {w}\n")
+        # Define um vertice inicial s e um final d
+        s = random.randrange(0, n)
+        d = utils.rand_exclude(0, n, s)
+        f.write(f"{n} {m} {w} {s} {d} \n")
+        print(f"Generating Graph {x}, n={n} m={m} w={w} s={s} d={d}")
         
         # Criar uma spanning tree antes de adicionar o resto das arestas
         for u in range(1, n):
@@ -29,7 +30,7 @@ def generate_balanced_connected_graph(n, m, w, x):
         while count < m:
             u = random.randrange(0, n) 
             v = random.randrange(0, n)
-            if (u, v) not in edges:
+            if u != v and (u, v) not in edges:
                 line = f"{u} {v} {weights[count]}"
                 if count < m - 1:
                     line += "\n"
@@ -38,4 +39,7 @@ def generate_balanced_connected_graph(n, m, w, x):
                 count += 1 
 
 for i in range(1, 16):
-    generate_balanced_connected_graph(10000, 100000, 1000, i)
+    n = random.randrange(1000, 5000)
+    m = random.randrange(5 * n, 10 * n)
+    c = random.randrange(1, 10)
+    generate_balanced_connected_graph(n, m, c, i)
