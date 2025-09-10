@@ -39,7 +39,7 @@ def generate_balanced_connected_graph(n, m, w, x):
                 count += 1 
 
 for i in range(1, 16):
-    n = random.randrange(1000, 5000)
+    n = random.randrange(100, 1000)
     m = random.randrange(5 * n, 10 * n)
     c = random.randrange(1, 10)
     generate_balanced_connected_graph(n, m, c, i)

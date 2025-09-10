@@ -1,0 +1,5 @@
+- video de precisao arbritária
+- exercícios de precisão arbritária
+- global em python
+- altura da arvore sem ser binária
+- 3 videos de programação dinamica

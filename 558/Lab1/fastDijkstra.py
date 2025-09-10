@@ -33,7 +33,7 @@ def fastDijkstra(n, source, destination, graph):
                         del buckets[dist[v]]
                 dist[v] = newDist
                 buckets[newDist].add(v)
-
+    
     return dist[destination]
 
 tempos = []
