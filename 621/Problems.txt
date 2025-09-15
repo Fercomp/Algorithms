@@ -1,6 +1,72 @@
 Week1:
+    A -> Ok
+    B -> Ok
+    C -> OK
+    D
+    E
+    F
+    G
+    H -> Ok
+    I 
+    J -> Ok
+    K
+    L -> OK
+    M
+
 Week2:
+    A -> OK
+    B
+    C
+    D
+    E -> OK
+    F
+    G
+    H
+    I 
+    J -> OK
+
 Week3:
 Week4:
+    A 
+    B
+    C -> OK
+    D -> Ok
+    E -> Ok
+    F -> ok preciso submeter e arrumar
+    G
+    H
+    I
+    J
 Week5:
+    A:
+    B:
+    C: Ok
+    D: Ok
+    E: Ok
+    F:
+    G:
+    H:
+    I:
+    J: 
 Week6:
+    A: Meet in the Midle ->
+    B:
+    C:
+    D:
+    E:
+    F:
+    G:
+    H:
+    I:
+    J: Tree Diameter -> Ok
+Week6:
+    A:
+    B:
+    C:
+    D: OK
+    E:
+    F:
+    G: OK
+    H:
+    I:
+    J: 

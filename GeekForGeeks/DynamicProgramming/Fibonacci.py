@@ -1,4 +1,6 @@
 # Naive approach using recursion without memoization or tabulation
+# T(n) = O(n^2)
+# If a binary tree have height n, it will have 2^n nodes, so n^2 operations 
 def fibonacci1(n):
     if n <= 1:
         return n
@@ -16,11 +18,43 @@ def fibonacci2(n, memo=None):
     
     memo[n] = fibonacci2(n-1, memo) + fibonacci2(n-2, memo)
     return memo[n]
+
+# Using tabulation O(n) time and O(n) space
+def fibonacci3(n):
+    dp = [-1] * (n + 1)
+    dp[0] = 0
+    dp[1] = 1
+    for i in range(2, n+1):
+        dp[i] = dp[i-1] + dp[i-2]
+    return dp[n]
+
+# Using tabulation with space O(1)
+def fibonacci4(n):
+    pp = 0
+    p = 1
+    c = 1
+    for _ in range(2, n+1):
+        c = p + pp
+        pp = p
+        p = c
+    return c
     
-print(fibonacci2(2))
-print(fibonacci2(3))
-print(fibonacci2(4))
-print(fibonacci2(5))
-print(fibonacci2(6))
-print(fibonacci2(7))
-print(fibonacci2(52))
+def lucas_numbers(n):
+    dp = [-1] * (n+1)
+    dp[0] = 2
+    dp[1] = 1
+    for i in range(2, n+1):
+        dp[i] = dp[i-1] + dp[i-2]
+    return dp[n]
+
+# Using O(1) space
+def lucas_numbers(n):
+    a = 2
+    b = 1
+    c = 0
+    
+    for _ in range(2, n+1):
+        c = a + b
+        b = a
+        a = c
+    return c

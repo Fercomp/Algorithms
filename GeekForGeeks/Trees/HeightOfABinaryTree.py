@@ -50,8 +50,7 @@ def iterative_heightOfBinaryTree(root):
         if v.right:
             s.append((v.right, h+1))
     return max_height
-    
-        
+         
 print(heightOfBinaryTree(root))
 print(bfs_heightOfBinaryTree(root))
 print(iterative_heightOfBinaryTree(root))

@@ -3,3 +3,5 @@
 - global em python
 - altura da arvore sem ser binária
 - 3 videos de programação dinamica
+- Fatores primos, gcd, primos sei la o que de euclides
+- Gerar todas combinações usando bitmask
