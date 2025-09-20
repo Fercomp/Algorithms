@@ -38,6 +38,9 @@ def isPrime3(n):
     if n == 2:
         return True
     
+    if n % 2 == 0:
+        return False
+    
     limit = int(math.sqrt(n)) + 1
     # Skip even numbers by using step = 2
     for i in range(3, limit, 2):
