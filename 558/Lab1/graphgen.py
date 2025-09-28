@@ -41,5 +41,5 @@ def generate_balanced_connected_graph(n, m, w, x):
 for i in range(1, 16):
     n = random.randrange(100, 1000)
     m = random.randrange(5 * n, 10 * n)
-    c = random.randrange(1, 10)
+    c = random.randrange(1, 100)
     generate_balanced_connected_graph(n, m, c, i)

@@ -27,6 +27,5 @@ for x in range(1, 16):
     interval = end - start
     print(f"Dijkstra n={n}, m={m}, c={c}, s={s}, d={d}, time={interval}")
     tempos.append(interval)
-    break
     
 print("Média:", statistics.mean(tempos))
