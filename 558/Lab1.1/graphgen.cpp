@@ -31,7 +31,7 @@ double rand_weight(double min_val, double max_val, mt19937 &gen) {
 }
 
 // Gera grafo direcionado simétrico com pesos iguais em (u,v) e (v,u)
-void generate_balanced_connected_graph(int n, int m, double D, int x) {
+void generate_connected_graph(int n, int m, double D, int x) {
     random_device rd;
     mt19937 g(rd());
 
@@ -85,7 +85,7 @@ int main() {
         int n = 100 + rand() % 400;
         int m = ((5 * n) + rand() % (5 * n)) * 2; // Número par de arestas para ser bidirecional
         double D = 100.0; // máximo custo
-        generate_balanced_connected_graph(n, m, D, i);
+        generate_connected_graph(n, m, D, i);
     }
     return 0;
 }
