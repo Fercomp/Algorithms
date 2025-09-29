@@ -31,7 +31,7 @@ double rand_weight(double min_val, double max_val, mt19937 &gen) {
 }
 
 // Gera grafo direcionado simétrico com pesos iguais em (u,v) e (v,u)
-void generate_connected_graph(int n, int m, double D, int x) {
+void generate_connected_graph(int n, int m, double c, int x) {
     random_device rd;
     mt19937 g(rd());
 
@@ -47,10 +47,10 @@ void generate_connected_graph(int n, int m, double D, int x) {
     f << n << " " << m << " " << s << " " << d << "\n";
     cout << "Generating Graph " << x << ", n=" << n << " m=" << m << " s=" << s << " d=" << d << "\n";
 
-    // spanning tree
+    // spanning tree garante que o grafo é conexo
     for (int u = 1; u < n; u++) {
         int v = rand() % u;
-        double w = rand_weight(10.0, D, g);
+        double w = rand_weight(10.0, c, g);
 
         f << u << " " << v << " " << w << "\n";
         f << v << " " << u << " " << w << "\n";
@@ -65,7 +65,7 @@ void generate_connected_graph(int n, int m, double D, int x) {
         int u = rand() % n;
         int v = rand() % n;
         if (u != v && !edges.count({u, v})) {
-            double w = rand_weight(10.0, D, g);
+            double w = rand_weight(10.0, c, g);
 
             f << u << " " << v << " " << w << "\n";
             f << v << " " << u << " " << w << "\n";
@@ -82,10 +82,10 @@ void generate_connected_graph(int n, int m, double D, int x) {
 int main() {
     srand(time(NULL));
     for (int i = 1; i <= 15; i++) {
-        int n = 100 + rand() % 400;
-        int m = ((5 * n) + rand() % (5 * n)) * 2; // Número par de arestas para ser bidirecional
-        double D = 100.0; // máximo custo
-        generate_connected_graph(n, m, D, i);
+        int n = 50000 + rand() % 50000; // Número grande de vertices pra fazer dial valer a pena
+        int m = ((5 * n) + rand() % (5 * n)) * 2; // Número par de arestas para ser bidirecional e 5n pra ser denso
+        double c = 100.0; // Máximo custo pequeno se não dial perde efeito
+        generate_connected_graph(n, m, c, i);
     }
     return 0;
 }

@@ -60,11 +60,6 @@ double dijkstra(int n, int source, int dest, const vector<vector<pair<double,int
         }
     }
 
-    // imprime os 100 primeiros
-    for (int i = 0; i < min(10, n); i++)
-        cout << dist[i] << " ";
-    cout << endl;
-
     return dist[dest];
 }
 
@@ -82,7 +77,7 @@ int main() {
         auto end = chrono::high_resolution_clock::now();
 
         chrono::duration<double> interval = end - start;
-        cout << "Dijkstra n=" << n << " m=" << m << " s=" << s << " d=" << d << " time=" << interval.count() << "s\n";
+        cout << "Dijkstra n=" << n << " m=" << m << " s=" << s << " d=" << d << " dist=" << dist << " time=" << interval.count() << "s\n";
         tempos.push_back(interval.count());
     }
 
