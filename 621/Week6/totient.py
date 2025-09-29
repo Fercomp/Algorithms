@@ -6,7 +6,6 @@ def gcd(a, b):
 
 n = int(input())
 for _ in range(n):
-
     count = 0
     l = int(input())
     for i in range(l):

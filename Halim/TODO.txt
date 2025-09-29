@@ -1,1 +1,2 @@
-Tenho que entregar o 661
+Tenho que entregar o tprimes
+Da pra fazer o totient tambem só não entendi nada
