@@ -12,9 +12,9 @@ Years later, I decided to try again with Python. Its clean syntax and "syntactic
 
 ## Repository Structure
 
-* **📂 `/learning`**: Contains foundational problems organized by topic (e.g., matrices, graphs, linked lists). These were the first exercises I tackled for each subject, making them a good starting point for beginners. The problems are compiled from various online sources.
+* **`/learning`**: Contains foundational problems organized by topic (e.g., matrices, graphs, linked lists). These were the first exercises I tackled for each subject, making them a good starting point for beginners. The problems are compiled from various online sources.
 
-* **📂 `/halim`**: Features my solutions to problems from the book *Competitive Programming* by Steven and Felix Halim. This collection uses the UVa Online Judge problem set and is an excellent resource for competitive programming practice.
+* **`/halim`**: Features my solutions to problems from the book *Competitive Programming* by Steven and Felix Halim. This collection uses the UVa Online Judge problem set and is an excellent resource for competitive programming practice.
 
 ---
 
