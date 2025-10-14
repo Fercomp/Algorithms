@@ -1,0 +1,74 @@
+1. Fundamentals of Trie Data Structure
+Implement a Trie (Insert, Search, Delete)
+Implement a TrieNode Class
+Insert a Word into a Trie
+Search for a Word in a Trie
+Delete a Word from a Trie
+Check if a Prefix Exists in a Trie
+Count Words in a Trie
+Count Prefixes in a Trie
+Implement a Trie with Case Sensitivity
+Implement a Trie with Case Insensitivity
+NEW: Visualize Trie Structure for Better Understanding (Display Trie as a Tree)
+
+2. Trie-Based String Operations
+Find All Words with a Given Prefix (Using Trie)
+Find Words that Start with a Given Prefix (Using Trie)
+Find All Words that End with a Given Suffix (Using Trie)
+Find Longest Prefix Matching a Given String
+Find the Shortest Unique Prefix for Each Word
+Find All Words that Match a Given Pattern (Using Wildcards)
+Implement a Trie to Solve the Autocomplete Problem
+Find the Longest Common Prefix Among a List of Words
+Implement a Trie for Text Search and Replacement
+Find the Longest Common Suffix Among a List of Words
+NEW: Implement Trie for Anagram Search Across Words
+
+3. Advanced Trie Operations
+Implement a Trie with Node Counting
+Implement a Trie with Value Mapping (Key-Value Pair Storage)
+Implement a Trie with Frequency Counting
+Find the Number of Words with a Specific Prefix
+Find the Number of Words with a Specific Suffix
+Implement a Trie for Dictionary Word Lookup
+Find the Longest Prefix of a Word in a Trie
+Find the Maximum Number of Words in a Trie that Share a Prefix
+Find the Shortest Path from Root to a Given Word in a Trie
+Implement a Trie with a TrieMap (Word Count Mapping)
+NEW: Find All Palindromic Prefixes and Suffixes Using Trie
+NEW: Implement a Memory-Efficient Trie Using Bitwise Operations
+
+4. Trie and Text Processing
+Implement a Trie-based Spell Checker
+Implement a Trie for Dictionary-Based Text Completion
+Find All Possible Words that Can Be Formed from a Given Set of Letters (Using Trie)
+Implement a Trie-based Solution for Word Segmentation
+Implement a Trie to Solve the Word Break Problem
+Find All Valid Words in a Board Using Trie (Word Search II)
+Find the Maximum Number of Words Formed from a Given List (Using Trie)
+Implement a Trie-based Solution for Text Search with Wildcards
+Implement a Trie to Solve the Text Justification Problem
+Find the Most Frequent Prefixes in a Large Text Dataset (Using Trie)
+NEW: Implement Trie for Predictive Text Input for Multilingual Support
+NEW: Build a Trie-Based Solution for Document Similarity Detection
+
+5. Trie-Based Algorithms and Pattern Matching
+Implement a Trie-Based Algorithm for Prefix Matching
+Implement a Trie-Based Algorithm for Suffix Matching
+Find the Minimum Number of Edits to Convert One Word to Another (Using Trie)
+Find the Maximum Length of a Prefix with a Given Frequency (Using Trie)
+Implement a Trie-Based Algorithm for Finding Palindromic Substrings
+Find the Number of Distinct Substrings in a given string (Using Trie)
+Implement a Trie-Based Algorithm for Pattern Matching with Multiple Patterns
+Find the Longest Palindromic Substring in a Trie
+Find the Kth Largest Prefix in a Trie
+Implement a Trie-Based Algorithm for Longest Repeating Substring
+NEW: Implement Trie for N-gram Analysis in Large Datasets
+NEW: Solve the Longest Repeating Subsequence Problem Using Trie
+
+6. Application-Oriented Trie Challenges
+Develop an Efficient Trie for Fast Language Translation Suggestions
+Implement a Trie for Storing Synonyms and Antonyms of Words
+Build a Trie for Fast URL Storage and Retrieval in Web Crawlers
+Implement Trie for DNA Sequence Matching in Bioinformatics
+Build a Trie-based Keyword Search and Ranking System for E-Commerce
