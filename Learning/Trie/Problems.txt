@@ -1,10 +1,4 @@
-1. Fundamentals of Trie Data Structure
-Implement a Trie (Insert, Search, Delete)
-Implement a TrieNode Class
-Insert a Word into a Trie
-Search for a Word in a Trie
 Delete a Word from a Trie
-Check if a Prefix Exists in a Trie
 Count Words in a Trie
 Count Prefixes in a Trie
 Implement a Trie with Case Sensitivity
