@@ -1,17 +1,6 @@
-Week1:
-    A -> Ok
-    B -> Ok
-    C -> OK
-    D
-    E
-    F
-    G
-    H -> Ok
-    I 
-    J -> Ok
-    K
-    L -> OK
-    M
+https://vjudge.net/contest/742241#problem/I
+https://vjudge.net/contest/743882/problemPdf/A?descKey=3157444346665315
+https://vjudge.net/contest/743882/problemPdf/F?descKey=3127213416341652
 
 Week2:
     A -> OK
