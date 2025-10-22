@@ -29,6 +29,7 @@ def rotate(p: Point, theta: float) -> Point:
     rad = deg_to_rad(theta)
     return Point(p.x * math.cos(rad) - p.y * math.sin(rad), p.x * math.sin(rad) + p.y * math.cos(rad))
 
+
 # Só consigo comparar points porque dei override do metodo __lt__
 l_p = [Point2D(2,3),Point2D(-1,3),Point2D(2,4),Point2D(3,99)]
 print(mod(Point2D(3, 4)))
