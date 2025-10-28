@@ -59,7 +59,7 @@ class Point2D:
         return self.y < other.y
     
     # This is importante to compare, uses EPS to avoid precision error 
-    def __eq__(self, other: 'Point') -> bool:
+    def __eq__(self, other: 'Point2D') -> bool:
         return (abs(self.x - other.x) < EPS and abs(self.y - other.y) < EPS)
 
 if __name__ == '__main__':
