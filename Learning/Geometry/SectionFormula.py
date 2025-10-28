@@ -23,6 +23,6 @@ p1/___|
 # y = (M.p2.y + N.p1.y) / (M + N)
 
 def sectionPoint(p1, p2, m, n):
-    x = (p1.x * m + p2.y * n) * m / (m + n)
-    y = (p1.y * m + p2.y * n) * m / (m + n)
+    x = (p1.x * m + p2.y * n) / (m + n)
+    y = (p1.y * m + p2.y * n) / (m + n)
     return Point2D(x, y)
