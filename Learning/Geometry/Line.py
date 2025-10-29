@@ -1,16 +1,21 @@
-# na escola uma linha é dada por y = ax + b
-# aqui vamos convensionar que são todos os pontos que estao na linha 
-# ay + bx + c = 0, e b = 1 para linhas não verticais e b = 0 para verticais
+# Here we won't use the line equation used in scholl y = ax + b
+# this can't deal with vertical lines, because a = y2-y1/x2-x1,
+# and if is vertical x2-x1 is zero and we can't divide by zero.
+# So instead of that we will use the general form ax + by = c
+# if line is horizontal a = 0, and if line is vertical b = 0
 
-class Line:
-    def __init__(self, a=0, b,=0 c=0):
-        self.a = a
-        self.b = b
-        self.c = c
+# So if we are given two points p1 and p2 we can do the following system
+# a.p1.x + b.p1.y = c
+# a.p2.x + b.p2.y = c
 
-# ay + bx + c = 0
-# ay1 + bx1 + c = 0
-# ay2 + bx2 + c = 0
-# a(y1-y2) + b(x1-x2) = 0
-# b(x1-x2) = -a(y1-y2)
-# b = -a(y1-y2)/(x1-x2)
+# a(p1.x - p2.x) = b(p1.y - p2.y)
+# a = (p1.y - p2.y)
+# b = (p1.x - p2.x)
+# c = a.p1.x + b.p1.y = a.p2.x + b.p2.y
+
+from Point import Point2D
+
+def line(p1: Point2D, p2: Point2D):
+    a = p1.y - p2.y
+    b = p1.x - p2.x
+    c = a * p1.x + b * p1.y
