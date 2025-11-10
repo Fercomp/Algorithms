@@ -16,6 +16,13 @@
 from Point import Point2D
 
 def line(p1: Point2D, p2: Point2D):
-    a = p1.y - p2.y
+    a = p2.y - p1.y
     b = p1.x - p2.x
     c = a * p1.x + b * p1.y
+    return a, b, c
+
+class Line:
+    def __init__(self, p1: Point2D, p2: Point2D):
+        self.a = p2.y - p1.y
+        self.b = p1.x - p2.x
+        self.c = a * p1.x + b * p1.y
