@@ -1,1 +1,1 @@
-Trying to learn algorithms
+Trying to learn algorithms.
