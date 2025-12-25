@@ -1,7 +1,3 @@
-TODO:
-Aprender sobre aquelas sobrescritas de metodos padrão em python
-Longest substring documentation
-
 Anki Adds-On:
     Code Highlight
     Review heatmap

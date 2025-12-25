@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/maximum-depth-of-binary-tree/
+
 class Node:
     def __init__(self, val=0, children=[]):
         self.val = val
