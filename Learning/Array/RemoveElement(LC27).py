@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/remove-element
+# leetcode.com/problems/remove-element
 
 nums = [3,2,3,3,1,4,5,3]
 target = 3

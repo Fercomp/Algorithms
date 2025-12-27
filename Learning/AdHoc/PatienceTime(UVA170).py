@@ -4,7 +4,7 @@ from collections import deque
 
 while True:
     deck = []
-    # Optei por ler as 4 linhas em 4 variávies sem loop, porque eu preciso ler a primeira
+    # Optei por ler as 4 linhas em 4 variáveis sem loop, porque eu preciso ler a primeira
     # para ver se não é o fim, se eu usasse o loop teria que ficar tratando quando i = 0,
     # mas poderia também
     line1 = input().split()
@@ -15,10 +15,10 @@ while True:
     line4 = input().split()
     # concatenação de listas em python seguindo a ordem do input
     deck += line1 + line2 + line3 + line4
-    # reversed múda a lista inplace preciso inverter porque ele fala no enunciado que a última 
+    # reversed muda a lista inplace preciso inverter porque ele fala no enunciado que a última 
     # do input é a primeira a ser jogada
     deck.reverse()
-    # tive que criar um vetor com ordens porque não segue ordem alfabética ou númerica
+    # tive que criar um vetor com ordens porque não segue ordem alfabética ou numérica
     order_piles = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K"]
     # iniciar um deque pra cada pilha de forma que a chave é a o valor 
     piles = {r: deque() for r in order_piles} 
@@ -28,7 +28,7 @@ while True:
     for i in range(len(deck)):
         piles[order_piles[i % 13]].append(deck[i])
 
-    # Aqui é a lógica princiapl, pega a primera cur, depois fica vendo se essa pilha não está vazia
+    # Aqui é a lógica principal, pega cur, depois fica vendo se essa pilha não está vazia
     # se está acabou, se não insere cur embaixo e cur vira o top da pilha
     current_card = piles["K"].pop()
     cards_exposed = 1

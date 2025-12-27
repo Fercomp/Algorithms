@@ -1,10 +1,12 @@
-def twoSum(self, nums: List[int], target: int) -> List[int]:
+# leetcode.com/problems/two-sum
+
+def twoSum(nums, target):
     # A map to store {number: index}
     num_to_index_map = {}
 
     # Use enumerate to get both the index (i) and the value (num)
     # This strategy of in one pass add the values to dict avoid the problem
-    # of first creating a dict and them pass looking for values, becouse this 
+    # of first creating a dict and them pass looking for values, because this 
     # could lead to problem of using the same number two times
     # with only one pass we always compare the current number only against previus numbers
     for i, num in enumerate(nums):
