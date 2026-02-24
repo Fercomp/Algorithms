@@ -1,5 +1,29 @@
-# It's the same thing but we are counting how many ways 
-# So to reach the n stair we can came from the previus n-1 stair or n-2 stair
+# Recursive climbing the stair
+# Time: O(2^n)
+# Space: O(n)
+def climbing_the_stairs_r(n):
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 2
+    return climbing_the_stairs_r(n-1) + climbing_the_stairs_r(n-2)
+
+# Memoization climbing the stair
+# Time: O(n)
+# Space: O(n)
+def climbing_the_stairs_r(n, memo={}):
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 2
+    if n in memo:
+        return memo[n]
+    memo[n] = climbing_the_stairs_r(n-1) + climbing_the_stairs_r(n-2)
+    return memo[n]
+
+# Tabulation
+# Time: O(n)
+# Space: O(n)
 def climbing_the_stairs(n):
     dp = [-1] * (n+1)
     dp[0] = 1

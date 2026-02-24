@@ -7,6 +7,8 @@ def fibonacci1(n):
     return fibonacci1(n-1) + fibonacci1(n-2)
 
 # Using memoization
+# Time: O(n)
+# Space: O(n)
 def fibonacci2(n, memo=None):
     if memo == None:
         memo = [-1] * (n + 1)
@@ -19,7 +21,9 @@ def fibonacci2(n, memo=None):
     memo[n] = fibonacci2(n-1, memo) + fibonacci2(n-2, memo)
     return memo[n]
 
-# Using tabulation O(n) time and O(n) space
+# Using tabulation
+# Time: O(n)
+# Space: O(n)
 def fibonacci3(n):
     dp = [-1] * (n + 1)
     dp[0] = 0
@@ -28,7 +32,9 @@ def fibonacci3(n):
         dp[i] = dp[i-1] + dp[i-2]
     return dp[n]
 
-# Using tabulation with space O(1)
+# Using tabulation with optimized space
+# Time: O(n)
+# Space: O(1)
 def fibonacci4(n):
     pp = 0
     p = 1
@@ -37,24 +43,4 @@ def fibonacci4(n):
         c = p + pp
         pp = p
         p = c
-    return c
-    
-def lucas_numbers(n):
-    dp = [-1] * (n+1)
-    dp[0] = 2
-    dp[1] = 1
-    for i in range(2, n+1):
-        dp[i] = dp[i-1] + dp[i-2]
-    return dp[n]
-
-# Using O(1) space
-def lucas_numbers(n):
-    a = 2
-    b = 1
-    c = 0
-    
-    for _ in range(2, n+1):
-        c = a + b
-        b = a
-        a = c
     return c
