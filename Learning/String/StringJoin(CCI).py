@@ -1,6 +1,4 @@
-# The famous .join() function in python can be done in the following manner
-
-def join(s, c):
+def string_join(s, c):
     result_string = []
     for world in s:
         for w in world:
@@ -10,4 +8,4 @@ def join(s, c):
                 result_string.append(char)
     return "".join(result_string)
 
-print(join(["aba", "ca", "dabra"], "-"))
+print(string_join(["abra", "ca", "dabra"], "-")) # abra-ca-dabra

@@ -1,4 +1,4 @@
-def check_if_subset(list1, list2):
+def string_match(list1, list2):
     n = len(list1)
     m = len(list2)
     has_match = False
@@ -16,7 +16,7 @@ def check_if_subset(list1, list2):
 
     return has_match
 
-def check_if_subset2(list1, list2):
+def string_match2(list1, list2):
     n, m = len(list1), len(list2)
     # 'any' returns True if at least one comparison is True
     # list1[i:i + m] creates a slice of length m starting at index i
@@ -24,5 +24,4 @@ def check_if_subset2(list1, list2):
     # If any of them is equal to list2, the function returns True
     return any(list1[i:i + m] == list2 for i in range(n - m + 1))
 
-
-print(check_if_subset([0, 1, 2, 3], [1,2]))
+print(string_match([0, 1, 2, 3], [1,2]))

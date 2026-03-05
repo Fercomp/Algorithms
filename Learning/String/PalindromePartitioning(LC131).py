@@ -1,6 +1,5 @@
 # leetcode.com/problems/palindrome-partitioning
 
-
 s = "aab"
 
 def is_palindrome(s):
