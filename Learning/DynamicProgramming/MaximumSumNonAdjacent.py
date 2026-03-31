@@ -1,22 +1,5 @@
-# Rememeber, maximum sum of subsequences
-# Obs: this problem don't even make sence because we could only sum all elements
-# or if could have negative numbers just discard the negatives
 s = [1, 2, 3, 4, 5]
 
-# Basic recursion without dp
-def max_sub_sequences(s, i=0, r=[]):
-    if len(s) == i:
-        return 0
-    
-    r.append(s[i])
-    taken =  max_sub_sequences(s, i + 1, r)
-    r.pop()
-    not_taken = max_sub_sequences(s, i + 1, r)
-    return s[i] + max(taken, not_taken)
-
-# Now the problem states to find all subsequences with no adjacents elements
-# This makes more sence, because you cannot take a greedy approach and need to test
-# every subsequence
 # Time complexity: O(2^n)
 # Space complexity: O(n)
 def no_adj_max_sub_sequences(s, i=0, r=[]):
@@ -34,7 +17,7 @@ def no_adj_max_sub_sequences(s, i=0, r=[]):
 # Optimization using memoization
 # Space complexity: O(n)
 # Time complexity: O(n)
-def no_adj_max_sub_seq(s, i=0, memo={})
+def no_adj_max_sub_seq(s, i=0, memo={}):
     if i >= len(s):
         return 0
 

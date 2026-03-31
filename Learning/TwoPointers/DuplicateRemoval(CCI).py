@@ -2,7 +2,7 @@ def duplicate_removal(arr):
     if len(arr) <= 1:
         return
     
-    counter, seeker, writter = 1, 1, 1
+    seeker, writter = 1, 1
     
     while seeker < len(arr):
         if arr[seeker] == arr[seeker - 1]:
@@ -12,8 +12,8 @@ def duplicate_removal(arr):
             arr[writter] = arr[seeker]
             seeker += 1
             writter += 1
-            counter += 1
+            
+    return writter
             
 arr = [1, 2, 2, 3, 3, 3, 5]
-duplicate_removal(arr)
-print(arr)
+print(duplicate_removal(arr))
