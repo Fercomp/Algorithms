@@ -1,4 +1,5 @@
 # hackerrank.com/challenges/2d-array
+# leetcode.com/problems/maximum-sum-of-an-hourglass
 
 import math
 M = [
@@ -28,7 +29,7 @@ def hourglassSum(arr):
             cur_sum = 0
             for dir in hour_glass_mask:
                 # Is very important to notice that i control the y axis and j the x axis
-                # so is i + dir[1] that if the y and j + dir[0] that is the x
+                # y = i + dir[1] and x = j + dir[0]
                 cur_sum += arr[i + dir[1]][j + dir[0]]
             max_sum = max(max_sum, cur_sum)
             
