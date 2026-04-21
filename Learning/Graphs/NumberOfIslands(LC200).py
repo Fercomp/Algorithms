@@ -1,9 +1,5 @@
-'''
-Given an m x n 2D binary grid grid which represents a map of '1's (land) and '0's (water), 
-return the number of islands. An island is surrounded by water and is formed by connecting
-adjacent lands horizontally or vertically. You may assume all four edges of the grid are all
-surrounded by water.
-'''
+# https://leetcode.com/problems/number-of-islands/
+
 from collections import deque
 directions = [[1,0], [-1, 0], [0, 1], [0, -1]]
 
@@ -20,7 +16,7 @@ def bfs(n, m, i, j, visited, grid):
             y = int(v[1]) + direction[1]
             if is_valid_cell(x, y, n, m) and (x, y) not in visited and grid[x][y] == "1":
                 # It's very very important to add the cell when we first see it
-                # because if we don't add we can visit it agai in a cycle, to see this try to
+                # because if we don't add we can visit it again in a cycle, to see this try to
                 # imagine what will happen in a complete graph, you will add all the vertices 
                 # again in the second visit vertice
                 visited.add((x, y))
