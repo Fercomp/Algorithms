@@ -19,6 +19,3 @@ def find_product(word, target):
         
         if new_target in sum_to_word:
             return [words[l], words[r], words[new_target]]
-        
-        
-            
