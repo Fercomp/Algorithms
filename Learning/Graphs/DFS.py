@@ -1,13 +1,4 @@
-# 0
-# |\
-# 1 \
-# |\ |
-# 2 3
-# |
-# 4
-
 graph = [[1, 3], [2, 3], [1,4], [1,2], [2]]
-from collections import deque
 def DFS(g):
     v = [False] * len(g)
 
