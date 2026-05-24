@@ -1,3 +1,7 @@
+# cses.fi/problemset/task/1068
+
+# Time: O(n)
+# Space: O(n)
 n = int(input())
 result = [n]
 while n != 1:
