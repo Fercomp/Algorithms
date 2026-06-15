@@ -1,12 +1,14 @@
+import sys
 class UnionFind:
     def __init__(self, n):
         self.parents = list(range(n + 1))
         self.size = [1] * (n + 1)
 
     def find(self, x):
-        if self.parents[x] != x:
-            self.parents[x] = self.find(self.parents[x])
-        return self.parents[x]
+        while self.parents[x] != x:
+            self.parents[x] = self.parents[self.parents[x]]
+            x = self.parents[x]
+        return x
 
     def union(self, x, y):
         rx = self.find(x)
@@ -19,32 +21,36 @@ class UnionFind:
             self.parents[ry] = rx
             self.size[rx] += self.size[ry]
 
-n, m = map(int, input().split())
-
+it = iter(sys.stdin.buffer.read().split())
+n = int(next(it))
+m = int(next(it))
 edges = []
 can_be = [False] * m
-for i in range(m):
-    a, b, w = map(int, input().split())
-    edges.append((w, a, b, i))
+for idx in range(m):
+    a = int(next(it))
+    b = int(next(it))
+    w = int(next(it))
+    edges.append((w, a, b, idx))
 
-union_find = UnionFind(n)
 edges.sort()
-
+uf = UnionFind(n)
 i = 0
-while i < len(edges): 
+while i < m:
     j = i
-    while j < len(edges) and edges[i][0] == edges[j][0]:
-        j+=1
-    
-    for x in range(i, j):
-        w, a, b, idx = edges[x]
-        if union_find.find(a) != union_find.find(b):
+    while j < m and edges[j][0] == edges[i][0]:
+        j += 1
+
+    for k in range(i, j):
+        _, u, v, idx = edges[k]
+        if uf.find(u) != uf.find(v):
             can_be[idx] = True
-    
-    for x in range(i, j):
-        _, a, b, _ = edges[x]
-        union_find.union(a, b)
+
+    for k in range(i, j):
+        _, u, v, _ = edges[k]
+        uf.union(u, v)
     i = j
 
-for y in can_be:
-    print("YES" if y else "NO")
+out = []
+for x in can_be:
+    out.append("YES" if x else "NO")
+sys.stdout.write("\n".join(out))
