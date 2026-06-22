@@ -1,23 +1,25 @@
-# Very important library that have deque usuful to work like a queue
 from collections import deque
 
-def bfs(adj):
-    s = 2
-    t = []
+n, m = 4, 2
+graph = {
+    1: [2, 3],
+    2: [],
+    3: [4],
+    4: []
+    }
 
-    visited = [False] * len(adj)
-    visited[s] = True
+visited = [False] * (n + 1)
+parent = [-1] * (n + 1)
 
+def bfs(root):
+    visited[root] = True
     q = deque()
-    q.append(s)
+    q.append(root)
 
     while q:
-        u = q.popleft()
-        for i in adj[u]:
+        v = q.popleft()
+        for i in graph[v]:
             if not visited[i]:
                 q.append(i)
                 visited[i] = True
-
-        t.append(u)
-    return t
-print(bfs([[2],[2],[0,1,3],[2]]))
+                parent[i] = v
