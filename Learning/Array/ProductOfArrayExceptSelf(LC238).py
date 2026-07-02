@@ -1,26 +1,23 @@
 # leetcode.com/problems/product-of-array-except-self
 
 def productExceptSelf(nums):
-    total = 1
-    zeros = 0
-    first_zero_index = -1
-
+    prefix = [0] * len(nums)
+    sufix = [0] * len(nums)
+    acc = 1
     for i in range(len(nums)):
-        if nums[i] == 0 and zeros == 1:
-            nums
-            return [0] * len(nums)
-
-        if nums[i] == 0:
-            zeros += 1
-            first_zero_index = i
-            continue
+        acc *= nums[i]
+        prefix[i] = acc
         
-        total *= nums[i]
+    acc = 1
+    for i in range(len(nums)-1, -1, -1):
+        acc *= nums[i]
+        sufix[i] = acc
     
-    result = [0] * len(nums)
-    if zeros:
-        result[first_zero_index] = total
-    else:
-        for i in range(len(nums)):
-            result[i] = total // nums[i]
-    return result
+    for i in range(len(nums)):
+        pre = prefix[i-1] if i > 0 else 1
+        suf = sufix[i+1] if i < len(nums) else 1
+        nums[i] = pre * suf
+        
+    return nums
+
+print(productExceptSelf([0, 0]))
