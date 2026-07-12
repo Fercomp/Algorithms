@@ -1,21 +1,29 @@
 words = ["abc", "fg", "hij", "klm", "nop", "qrs", "vwx"]
 
 def alphabeticalSum(word):
-    total_sum = 0
-    for w in word:
-        total_sum += ord('a') - ord(w) + 1
-    return total_sum
+    return sum(ord(c) - ord('a') + 1 for c in word)
 
-def find_product(word, target):
-    sum_to_word = {}
-    for word in words:
-        sum_to_word[alphabeticalSum(word)] = word
+def find_product(words, target):
+    word_to_sum = {word: alphabeticalSum(word) for word in words}
+    sums = set(word_to_sum.values())
 
-    l, r = 0, len(words)-1
-    while l <= r:
-        new_target = target / (sum_to_word[word[l]] * sum_to_word[word[r]])
-        if new_target < 1:
+    for word1 in words:
+        sum1 = word_to_sum[word1]
+
+        if target % sum1 != 0:
             continue
-        
-        if new_target in sum_to_word:
-            return [words[l], words[r], words[new_target]]
+
+        target2 = target // sum1
+
+        for word2 in words:
+            sum2 = word_to_sum[word2]
+
+            if target2 % sum2 != 0:
+                continue
+
+            target3 = target2 // sum2
+
+            if target3 in sums:
+                return True
+
+    return False
