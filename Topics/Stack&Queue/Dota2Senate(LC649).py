@@ -1,30 +1,39 @@
 from collections import deque
 
 def predictPartyVictory(senate):
-    r, d = deque(), deque()
-    for i in range(len(senate)):
-        if senate[i] == "R":
-            r.append(i)
+    queue = deque(senate)
+    d_count, r_count = 0, 0
+    for s in senate:
+        if s == "D":
+            d_count += 1
         else:
-            d.append(i)
-
-    r_count, d_count = len(r), len(d)
+            r_count += 1
     
-    for i in range(len(senate)):
-        if not r or not d:
+    
+    d_to_delete, r_to_delete = 0, 0
+    
+    while queue:
+        if d_count == 0 or r_count == 0:
             break
+        for _ in range(len(queue)):            
+            v = queue.popleft()
+            
+            if v == "D" and not d_to_delete:
+                r_to_delete += 1
+                queue.append("D")
+                
+            if v == "D" and d_to_delete:
+                d_to_delete -= 1
+                d_count -= 1
+            
+            if v == "R" and not r_to_delete:
+                d_to_delete += 1
+                queue.append("R")
+                
+            if v == "R" and r_to_delete:
+                r_to_delete -= 1
+                r_count -= 1
+    
+    return "Dire" if d_count > r_count else "Radiant"    
 
-        if senate[i] == "R" and r[0] == i:
-            d_count -= 1
-            r.popleft()
-            d.popleft()
-
-        elif senate[i] == "D" and d[0] == i:
-            r_count -= 1
-            r.popleft()
-            d.popleft()
-        
-
-    return "Radiant" if r_count > d_count else "Dire"
-
-predictPartyVictory("DDRRR")
+print(predictPartyVictory("RDD"))
