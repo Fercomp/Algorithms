@@ -1,8 +1,8 @@
-# Time: O(n + R) where R = smallest - gratest
-# Space: O(n)
+# Time: O(n + R) where R = graetest - smallest
+# Space: O(n + R)
 def counting_sort(nums):
-    smallest, gratest = min(nums), max(nums)
-    frequency = [0] * (gratest - smallest + 1)
+    smallest, graetest = min(nums), max(nums)
+    frequency = [0] * (graetest - smallest + 1)
     
     for num in nums:
         frequency[num - smallest] += 1

@@ -1,3 +1,2 @@
-intervals = [[3, 9], [1, 4], [4, 7], [2, 3]]
-intervals.sort(key= lambda x: x[1])
-print(intervals)
+def sort_by_element_at_index(intervals):
+    return sorted(intervals, key= lambda x: x[1])

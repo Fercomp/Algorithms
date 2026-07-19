@@ -6,6 +6,8 @@ def intersection(interval1, interval2):
     upper_bound = min(interval1[1], interval2[1])
     return [lower_bound, upper_bound]
 
+# Time: O(n)
+# Space: O(n)
 def interval_intersection(arr1, arr2):
     arr1_ptr = 0
     arr2_ptr = 0
