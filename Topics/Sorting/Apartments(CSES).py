@@ -1,14 +1,7 @@
 n, m, k = map(int, input().split())
-
 desired = sorted(list(map(int, input().split())))
 real = sorted(list(map(int, input().split())))
-
-idx_d = 0
-idx_r = 0
-count = 0
-
-#d = [10, 16, 34, 37, 46, 49, 56, 62, 69, 86]
-#r = [7, 9, 43, 47, 50, 62, 71, 71, 83, 95]
+idx_d, idx_r, count = 0, 0, 0
 
 while idx_d < n and idx_r < m:
     
